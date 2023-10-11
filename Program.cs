@@ -52,15 +52,14 @@ namespace probaprobaproba
             // Elkészítjük az új part 2-t -> cél: ORLD! -> WORLD!
 
             // Ötlet: eredeti stringből kivenni a szóközt, készíteni egy új stringet, hátha segít a második szóban
-            string trimmedMessage = message.Replace(" ", "");
+            string trimmedMessage = message.Replace(" ", ""); // HELLOW ORLD! -> HELLOWORLD!
             int trimmedMessageLength = trimmedMessage.Length; // Ez így 11 (az eredeti, szóközzel 12)
-            Console.WriteLine(trimmedMessageLength);
             
             char[] newPart2 = new char[part2length];
 
             for(int i = part1length+1; i < trimmedMessageLength+1; i++)
             {
-                Console.WriteLine(trimmedMessage[i]);
+                newPart2[i] = trimmedMessage[i]; // IndexOutOfRangeException
             }
             
         }
