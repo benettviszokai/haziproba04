@@ -7,6 +7,76 @@ namespace probaprobaproba
     {
         static void Main(string[] args)
         {
+            // Eredeti string
+            string message = "HELLOW ORLD!";
+
+            // Eredeti string hossza
+            int allCharacters = message.Length; // 12
+
+            // Hol a szóköz? (+ milyen hosszú, hátha kell)
+            int space = message.IndexOf(' '); // 6 -> 6. indexen van (7. karakter)
+            string spacestring = space.ToString();
+            int spaceLength = spacestring.Length;
+
+            // Szétbontjuk a stringet
+            string part1 = message.Substring(0, space); // "HELLOW"
+            string part2 = message.Substring(space + 1); // "ORLD!"
+
+            // A szétbontott stringek hossza
+            int part1length = part1.Length; // 6 (HELLOW)
+            int part2length = part2.Length; // 5 (ORLD!)
+
+            // Megcseréljük a szétbontott stringek hosszát -> part1 = 5, part2 = 6
+            int temp = 0;
+            temp = part1length; // 6
+            part1length = part2length; // 5
+            part2length = temp; // 6 
+
+            string newMessage = "";
+            
+            if (part1length == part2length)
+            {
+                Console.WriteLine(message);
+            }
+
+            else if (part1length > part2length)
+            {
+                // Első karaktert leszedjük a második szóról
+                char firstCharPart2 = part2[0];
+                // Part 2 az első karakter nélkül
+                string part2MinusFirstChar = part2.Substring(1);
+
+                // Összefűzzük
+                string newString = part1 + firstCharPart2 + " " + part2MinusFirstChar;
+                Console.WriteLine(newString);
+            }
+
+            else
+            {
+                // Utolsó karaktert leszedjük
+                char lastCharPart1 = part1[part1.Length - 1];
+                // Part 1 az utolsó karakter nélkül
+                string part1MinusLastChar = part1.Substring(0, part1.Length - 1);
+
+                // Összefűzzük
+                string newString = part1MinusLastChar + " " + lastCharPart1 + part2;
+                Console.WriteLine(newString);
+            }
+        }
+    }
+}
+
+/* EZ VOLT A RÉGI MEGOLDÁS
+
+using System;
+using System.CodeDom.Compiler;
+
+namespace probaprobaproba
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
             /* Feladat
 
             Adott egy string, pl.: "HELLOW ORLD!"
@@ -15,7 +85,7 @@ namespace probaprobaproba
             2. Fordítsuk meg ezt a két számot (6, 5 -> 5, 6)
             3. Írjuk vissza az eredeti stringet a megfordított számoknak megfelelően: HELLOW ORLD -> HELLO WORLD!
             
-            */
+            
             // Eredeti string
             string message = "HELLOW ORLD!";
 
@@ -65,3 +135,4 @@ namespace probaprobaproba
         }
     }
 }
+*/
