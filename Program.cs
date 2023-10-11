@@ -7,7 +7,13 @@ namespace probaprobaproba
     {
         static void Main(string[] args)
         {
-            /*
+            /* Feladat
+
+            Adott egy string, pl.: "HELLOW ORLD!"
+
+            1. Számoljuk meg a két szóban lévő karakterek számát (pl. HELLOW (6), ORLD!(5))
+            2. Fordítsuk meg ezt a két számot (6, 5 -> 5, 6)
+            3. Írjuk vissza az eredeti stringet a megfordított számoknak megfelelően: HELLOW ORLD -> HELLO WORLD!
             
             */
             // Eredeti string
@@ -47,7 +53,7 @@ namespace probaprobaproba
 
             // Ötlet: eredeti stringből kivenni a szóközt, készíteni egy új stringet, hátha segít a második szóban
             string trimmedMessage = message.Replace(" ", "");
-            int trimmedMessageLength = trimmedMessage.Length;
+            int trimmedMessageLength = trimmedMessage.Length; // Ez így 11 (az eredeti, szóközzel 12)
             Console.WriteLine(trimmedMessageLength);
             
             char[] newPart2 = new char[part2length];
